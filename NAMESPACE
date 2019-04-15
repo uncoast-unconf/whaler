@@ -3,5 +3,6 @@
 export(dockerfile)
 export(insert_blank)
 export(set_env)
+export(set_from)
 export(write_dockerfile)
 import(magrittr)
