@@ -2,6 +2,7 @@
 
 export(docker)
 export(docker_build)
+export(docker_images)
 export(docker_list)
 export(docker_pull)
 export(docker_run)
