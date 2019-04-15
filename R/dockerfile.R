@@ -10,4 +10,5 @@
 dockerfile <- function(){
   ret <- list()
   class(ret) <- "dockerfile"
+  return(ret)
 }
