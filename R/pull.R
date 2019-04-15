@@ -3,7 +3,6 @@
 #' @param repository the repository to pull
 #' @param tag the tag to pull (optional)
 #'
-#' @return
 #' @export
 #'
 #' @examples

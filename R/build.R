@@ -4,11 +4,11 @@
 #' directory
 #' @param tag A tag to add to the final image
 #'
-#' @return
+#' @return the built Docker image object
 #' @export
 #'
 #' @examples
-#' build()
+#' build(path = "Dockerfiles/helloworld")
 build <- function(path = ".", tag = NULL) {
   client <- docker$client$from_env()
   client$images$build(path = path, tag = tag)

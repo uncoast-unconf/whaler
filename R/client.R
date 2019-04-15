@@ -6,6 +6,7 @@
 #' @return a docker client
 #'
 #' @examples
+#' client()
 client <- function(){
   docker$client$from_env()
 }

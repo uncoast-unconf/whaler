@@ -4,7 +4,7 @@
 #' @param all Show intermediate image layers. By default, these are filtered out
 #' @param filters Filters to be processed on the image list.
 #'
-#' @return
+#' @return list of images
 #' @export
 #'
 #' @examples
