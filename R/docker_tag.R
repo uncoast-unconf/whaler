@@ -10,9 +10,9 @@
 #'
 #' @examples
 #' \dontrun{
-#' tag("rocker/tidyverse", "v1.2.3.9000")
+#' docker_tag("rocker/tidyverse", "v1.2.3.9000")
 #' }
-tag <- function(source, target){
+docker_tag <- function(source, target){
   img <- client$images$get(source)
   img$tag(target)
 }

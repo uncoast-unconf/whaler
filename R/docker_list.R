@@ -8,8 +8,8 @@
 #' @export
 #'
 #' @examples
-#' list_images()
-list_images <- function(name = NULL, all = NULL, filters = NULL) {
+#' docker_list()
+docker_list <- function(name = NULL, all = NULL, filters = NULL) {
   client <- docker$client$from_env()
   client$images$list(name = name, all = all, filters = filters)
 }

@@ -6,8 +6,8 @@
 #' @export
 #'
 #' @examples
-#' pull("rocker/tidyverse")
-pull <- function(repository, tag = "latest") {
+#' docker_pull("rocker/tidyverse")
+docker_pull <- function(repository, tag = "latest") {
   client <- docker$client$from_env()
   client$images$pull(repository, tag = tag)
 }
