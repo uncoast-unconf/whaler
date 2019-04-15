@@ -10,12 +10,13 @@
 #'
 #' @examples
 #' dockerfile() %>%
+#'   insert_blank() %>%
 #'   write_dockerfile()
 #'
 write_dockerfile <- function(dockerfile){
 
   # Connect to the dockerfile
-  fileConn <- file("Dockerfile")
+  file_name = "Dockerfile"
 
   # Loop through dockerfile items
   for(ii in 1:length(dockerfile)){
@@ -25,12 +26,14 @@ write_dockerfile <- function(dockerfile){
 
       # The first line always includes the action word
       if(jj == 1){
-        writeLines(text = paste(names(dockerfile)[ii], dockerfile[[ii]][jj]),
-                   con = fileConn)
+        write(x = paste(names(dockerfile)[ii], dockerfile[[ii]][jj]),
+              file = file_name,
+              append = TRUE)
+      }else{
+        write(x = paste(dockerfile[[ii]][jj]),
+              file = file_name,
+              append = TRUE)
       }
-
-      writeLines(text = dockerfile[[ii]][jj])
-
     }
   }
 

@@ -1,6 +1,6 @@
 #' Adds a blank line at the end of the current dockerfile
 #'
-#' @param dockerfile
+#' @param dockerfile, a specification of the contents of the dockerfile
 #'
 #' @return `dockerfile`, a specification of the contents of the dockerfile
 #' @export
