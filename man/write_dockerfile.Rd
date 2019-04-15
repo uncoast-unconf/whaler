@@ -17,7 +17,6 @@ Write a dockerfile from a dockerfile object
 }
 \examples{
 dockerfile() \%>\%
-  insert_blank() \%>\%
   write_dockerfile()
 
 }

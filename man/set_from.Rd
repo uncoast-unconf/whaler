@@ -18,7 +18,6 @@ an object of class \code{dockerfile}
 set_from
 }
 \examples{
-dockerfile() \%>\%
- set_from("debian:stretch")
+dockerfile() \%>\% set_from(., "debian:stretch")
 
 }

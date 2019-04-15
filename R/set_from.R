@@ -9,9 +9,7 @@
 #'
 #' @export
 #'
-#' @examples
-#' dockerfile() %>%
-#'  set_from("debian:stretch")
+#' @examples dockerfile() %>% set_from(., "debian:stretch")
 #'
 set_from <- function(dockerfile, image) {
 
@@ -19,5 +17,4 @@ set_from <- function(dockerfile, image) {
   dockerfile <- c(dockerfile, FROM) %>%
     insert_blank()
 
-  return(dockerfile)
 }
