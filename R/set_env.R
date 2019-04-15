@@ -1,4 +1,4 @@
-#' Title
+#' sets environment variables in the docker image
 #'
 #' @param dockerfile an object of class `dockerfile`
 #' @param env_vars A named vector of environment variables and their values
