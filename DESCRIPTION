@@ -6,6 +6,10 @@ Authors@R:
            family = "Valentiner",
            role = c("aut", "cre"),
            email = "ellisvalentiner@gmail.com")
+    person(given = "Sam",
+           family = "Helmich",
+           role = c("aut"),
+           email = "sam.helmich@gmail.com")
 Description: What the package does (one paragraph).
 License: What license it uses
 Encoding: UTF-8
