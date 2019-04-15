@@ -2,7 +2,7 @@
 % Please edit documentation in R/set_env.R
 \name{set_env}
 \alias{set_env}
-\title{Title}
+\title{sets environment variables in the docker image}
 \usage{
 set_env(dockerfile, env_vars)
 }
@@ -15,7 +15,7 @@ set_env(dockerfile, env_vars)
 \code{dockerfile}, a specification of the contents of the dockerfile
 }
 \description{
-Title
+sets environment variables in the docker image
 }
 \examples{
 dockerfile() \%>\%

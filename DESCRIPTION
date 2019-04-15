@@ -15,5 +15,9 @@ License: MIT + file LICENSE
 Depends: magrittr
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    reticulate
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Suggests: 
+    testthat
