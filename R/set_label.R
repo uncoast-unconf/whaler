@@ -11,5 +11,9 @@
 #' set_label(c("label_1"="value_1", "label_2"="value_2"))
 #'
 set_label <- function(dockerfile, label_vars){
-  dockerfile
+  ret <- c(dockerfile,
+    'LABEL' = paste0('"',names(label_vars),'"="', label_vars,'"', collapse = ' ')) %>%
+    insert_blank()
+
+  return(ret)
 }
