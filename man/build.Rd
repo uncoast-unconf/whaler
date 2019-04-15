@@ -19,5 +19,7 @@ the built Docker image object
 Build an image from a Dockerfile
 }
 \examples{
+\dontrun{
 build(path = "Dockerfiles/helloworld")
+}
 }

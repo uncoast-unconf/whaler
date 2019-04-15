@@ -8,7 +8,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' build(path = "Dockerfiles/helloworld")
+#' }
 build <- function(path = ".", tag = NULL) {
   client <- docker$client$from_env()
   client$images$build(path = path, tag = tag)
