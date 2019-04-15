@@ -1,12 +1,12 @@
 #' Pre-formats and opens a new dockerfile
 #'
-#' @param name, the name of the dockerfile to be created
+#' @param open, whether or not to open the basic dockerfile after its created
 #'
 #' @return nothing
 #' @export
 #'
 #' @examples
-#'  basic_dockerfile("my.dockerfile")
+#'  basic_dockerfile()
 #'
 basic_dockerfile <- function(open = TRUE){
   fileConn <- file("Dockerfile")
@@ -17,7 +17,8 @@ basic_dockerfile <- function(open = TRUE){
     "FROM debian:stretch"),
     con = fileConn
   )
+  close(fileConn)
   if(open){
-    file.edit("Dockerfile")
+    utils::file.edit("Dockerfile")
   }
 }

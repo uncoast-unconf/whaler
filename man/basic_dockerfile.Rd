@@ -7,7 +7,7 @@
 basic_dockerfile(open = TRUE)
 }
 \arguments{
-\item{name, }{the name of the dockerfile to be created}
+\item{open, }{whether or not to open the basic dockerfile after its created}
 }
 \value{
 nothing
@@ -16,6 +16,6 @@ nothing
 Pre-formats and opens a new dockerfile
 }
 \examples{
- basic_dockerfile("my.dockerfile")
+ basic_dockerfile()
 
 }
