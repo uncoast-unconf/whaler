@@ -1,18 +1,19 @@
-#' Title
+#' set_from
 #'
-#' @param dockerfile `character` dockerfile() output
-#' @param image `character`
+#' @param dockerfile, an object of class `dockerfile`
+#' @param image an object of class `character`
+#'
+#' @import magrittr
 #'
 #' @return an object of class `dockerfile`
+#'
 #' @export
 #'
-#' @examples
+#' @examples dockerfile() %>% setfrom(., "debian:stretch")
 #'
 set_from <- function(dockerfile, image) {
 
   FROM <- list(FROM = paste("FROM ", image))
   dockerfile <- c(file, FROM)
-
-  return(dockerfile)
 
 }
