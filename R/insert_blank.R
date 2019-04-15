@@ -10,5 +10,5 @@
 #'   insert_blank() %>%
 #'   write_dockerfile()
 insert_blank <- function(dockerfile){
-  return(c(dockerfile, ''=''))
+  return(c(dockerfile, ' '=''))
 }
