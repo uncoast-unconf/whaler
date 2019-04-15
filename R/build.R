@@ -8,6 +8,8 @@
 #' @export
 #'
 #' @examples
+#' build()
 build <- function(path = ".", tag = NULL) {
+  client <- docker$client$from_env()
   client$images$build(path = path, tag = tag)
 }

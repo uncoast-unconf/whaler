@@ -3,8 +3,7 @@
 #'
 #' an interface to the docker engine
 #'
-#' @return
-#' @export
+#' @return a docker client
 #'
 #' @examples
 client <- function(){

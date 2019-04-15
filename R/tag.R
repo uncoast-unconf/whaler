@@ -2,13 +2,14 @@
 #'
 #' Create a tag "target" that refers to "source" image
 #'
-#' @param source
-#' @param target
+#' @param source the name of a source image
+#' @param target the tag name
 #'
 #' @return
 #' @export
 #'
 #' @examples
 tag <- function(source, target){
-  system2("docker", "tag", )
+  img <- client$images$get(source)
+  img$tag(target)
 }
