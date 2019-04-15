@@ -8,10 +8,8 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' build(path = "Dockerfiles/helloworld")
-#' }
-build <- function(path = ".", tag = NULL) {
+#' build_image(path = "Dockerfiles/helloworld")
+build_image <- function(path = here::here(), tag = NULL) {
   client <- docker$client$from_env()
   client$images$build(path = path, tag = tag)
 }
