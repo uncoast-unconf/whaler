@@ -9,7 +9,7 @@
 #'
 #' @export
 #'
-#' @examples dockerfile() %>% setfrom(., "debian:stretch")
+#' @examples dockerfile() %>% set_from(., "debian:stretch")
 #'
 set_from <- function(dockerfile, image) {
 
