@@ -14,5 +14,9 @@ Description: A package for interfacing with Docker from R, including generating 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    reticulate
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Suggests: 
+    testthat
