@@ -3,6 +3,8 @@
 export(check_for_from)
 export(dockerfile)
 export(insert_blank)
+export(set_env)
 export(set_from)
+export(set_label)
 export(write_dockerfile)
 import(magrittr)

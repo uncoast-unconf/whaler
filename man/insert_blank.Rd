@@ -7,7 +7,7 @@
 insert_blank(dockerfile)
 }
 \arguments{
-\item{dockerfile}{}
+\item{dockerfile, }{a specification of the contents of the dockerfile}
 }
 \value{
 \code{dockerfile}, a specification of the contents of the dockerfile
