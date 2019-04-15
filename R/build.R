@@ -1,12 +1,13 @@
-#' Build a Docker image
+#' Build an image from a Dockerfile
 #'
-#' @param path file path to the Dockerfile, defaults to the current working
+#' @param path A file path to the Dockerfile, defaults to the current working
 #' directory
+#' @param tag A tag to add to the final image
 #'
 #' @return
 #' @export
 #'
 #' @examples
-build <- function(path = ".") {
-  system2("docker", "build", path)
+build <- function(path = ".", tag = NULL) {
+  client$images$build(path = path, tag = tag)
 }

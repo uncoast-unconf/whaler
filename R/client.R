@@ -8,5 +8,5 @@
 #'
 #' @examples
 client <- function(){
-
+  docker$client$from_env()
 }
