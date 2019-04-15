@@ -15,7 +15,7 @@ get_packages_list <- function(project_dir = getwd()) {
   if (!file.exists(lock_file)) {
     packrat::init(project = project_dir, options = list(), enter = FALSE)
   } else {
-    packrat::snapshot(project_dir, prompt = FALSE, snapshot.sources = FALSE, infer.dependencies = TRUE)
+    packrat::snapshot(project_dir, dry.run = TRUE, prompt = FALSE, snapshot.sources = FALSE, infer.dependencies = TRUE)
   }
   # Read packrat.lock file to get df of packages and versions in use
   df <- as.data.frame(readDcf(lock_file), stringsAsFactors = FALSE)
