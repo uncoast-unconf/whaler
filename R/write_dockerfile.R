@@ -1,0 +1,40 @@
+#' Write a dockerfile from a dockerfile object
+#'
+#' @param dockerfile, an object of class `dockerfile`
+#'
+#' @return an object of class `dockerfile`
+#'
+#' @import magrittr
+#'
+#' @export
+#'
+#' @examples
+#' dockerfile() %>%
+#'   write_dockerfile()
+#'
+write_dockerfile <- function(dockerfile){
+
+  # Connect to the dockerfile
+  fileConn <- file("Dockerfile")
+
+  # Loop through dockerfile items
+  for(ii in 1:length(dockerfile)){
+    # For each item in the dockerfile object, loop through and write out the individual line
+    for(jj in 1:length(dockerfile[ii])){
+      # For each dockerfile item, write out a line
+
+      # The first line always includes the action word
+      if(jj == 1){
+        writeLines(text = paste(names(dockerfile)[ii], dockerfile[[ii]][jj]),
+                   con = fileConn)
+      }
+
+      writeLines(text = dockerfile[[ii]][jj])
+
+    }
+  }
+
+  # Return the dockerfile, unedited
+  return(dockerfile)
+
+}
