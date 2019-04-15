@@ -19,6 +19,6 @@ set_from
 }
 \examples{
 dockerfile() \%>\%
- set_from("debian:stretch") \%>\%
+ set_from("debian:stretch")
 
 }
