@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>sets environment variables in the docker image — set_env • whaler</title>
+<title>Build an image from a Dockerfile — docker_build • whaler</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="sets environment variables in the docker image — set_env" />
+<meta property="og:title" content="Build an image from a Dockerfile — docker_build" />
 
-<meta property="og:description" content="sets environment variables in the docker image" />
+<meta property="og:description" content="Build an image from a Dockerfile" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -94,54 +94,46 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>sets environment variables in the docker image</h1>
+    <h1>Build an image from a Dockerfile</h1>
     
-    <div class="hidden name"><code>set_env.Rd</code></div>
+    <div class="hidden name"><code>docker_build.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>sets environment variables in the docker image</p>
+    <p>Build an image from a Dockerfile</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>set_env</span>(<span class='no'>dockerfile</span>, <span class='no'>env_vars</span>)</pre>
+    <pre class="usage"><span class='fu'>docker_build</span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='kw pkg'>here</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/here/topics/here'>here</a></span>(), <span class='kw'>tag</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dockerfile</th>
-      <td><p>an object of class <code>dockerfile</code></p></td>
+      <th>path</th>
+      <td><p>A file path to the Dockerfile, defaults to the current working
+directory</p></td>
     </tr>
     <tr>
-      <th>env_vars</th>
-      <td><p>A named vector of environment variables and their values</p></td>
+      <th>tag</th>
+      <td><p>A tag to add to the final image</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>dockerfile</code>, a specification of the contents of the dockerfile</p>
+    <p>the built Docker image object</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='dockerfile.html'>dockerfile</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'>set_env</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"S6_VERSION"</span> <span class='kw'>=</span> <span class='st'>"${S6_VERSION:-v1.21.7.0}"</span>,
-            <span class='st'>"S6_BEHAVIOUR_IF_STAGE_2_FAILS"</span>, <span class='st'>"2"</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='write_dockerfile.html'>write_dockerfile</a></span>()</div><div class='output co'>#&gt; $ENV
-#&gt; [1] "S6_VERSION=${S6_VERSION:-v1.21.7.0}"
-#&gt; 
-#&gt; $ENV
-#&gt; [1] "=S6_BEHAVIOUR_IF_STAGE_2_FAILS"
-#&gt; 
-#&gt; $ENV
-#&gt; [1] "=2"
-#&gt; 
-#&gt; $` `
-#&gt; [1] ""
-#&gt; </div><div class='input'>
-</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>docker_build</span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"Dockerfiles/helloworld"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: You must specify a directory to build in path</span>
+#&gt; <span class='error'></span>
+#&gt; <span class='error'>Detailed traceback: </span>
+#&gt; <span class='error'>  File "/Users/evalentiner/.virtualenvs/r-reticulate/lib/python3.7/site-packages/docker/models/images.py", line 279, in build</span>
+#&gt; <span class='error'>    resp = self.client.api.build(**kwargs)</span>
+#&gt; <span class='error'>  File "/Users/evalentiner/.virtualenvs/r-reticulate/lib/python3.7/site-packages/docker/api/build.py", line 147, in build</span>
+#&gt; <span class='error'>    raise TypeError("You must specify a directory to build in path")</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

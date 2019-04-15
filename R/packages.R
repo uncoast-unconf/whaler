@@ -7,7 +7,7 @@ library(httr)
 library(jsonlite)
 library(purrr)
 
-source("utils.R")
+source("R/utils.R")
 
 get_packages_list <- function(project_dir = getwd()) {
   # Init or snapshot to create or update the packrat.lock file

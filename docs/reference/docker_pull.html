@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>sets environment variables in the docker image — set_env • whaler</title>
+<title>Pull a Docker image from a repository — docker_pull • whaler</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="sets environment variables in the docker image — set_env" />
+<meta property="og:title" content="Pull a Docker image from a repository — docker_pull" />
 
-<meta property="og:description" content="sets environment variables in the docker image" />
+<meta property="og:description" content="Pull a Docker image from a repository" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -94,62 +94,41 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>sets environment variables in the docker image</h1>
+    <h1>Pull a Docker image from a repository</h1>
     
-    <div class="hidden name"><code>set_env.Rd</code></div>
+    <div class="hidden name"><code>docker_pull.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>sets environment variables in the docker image</p>
+    <p>Pull a Docker image from a repository</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>set_env</span>(<span class='no'>dockerfile</span>, <span class='no'>env_vars</span>)</pre>
+    <pre class="usage"><span class='fu'>docker_pull</span>(<span class='no'>repository</span>, <span class='kw'>tag</span> <span class='kw'>=</span> <span class='st'>"latest"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dockerfile</th>
-      <td><p>an object of class <code>dockerfile</code></p></td>
+      <th>repository</th>
+      <td><p>the repository to pull</p></td>
     </tr>
     <tr>
-      <th>env_vars</th>
-      <td><p>A named vector of environment variables and their values</p></td>
+      <th>tag</th>
+      <td><p>the tag to pull (optional)</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p><code>dockerfile</code>, a specification of the contents of the dockerfile</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='dockerfile.html'>dockerfile</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'>set_env</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"S6_VERSION"</span> <span class='kw'>=</span> <span class='st'>"${S6_VERSION:-v1.21.7.0}"</span>,
-            <span class='st'>"S6_BEHAVIOUR_IF_STAGE_2_FAILS"</span>, <span class='st'>"2"</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='write_dockerfile.html'>write_dockerfile</a></span>()</div><div class='output co'>#&gt; $ENV
-#&gt; [1] "S6_VERSION=${S6_VERSION:-v1.21.7.0}"
-#&gt; 
-#&gt; $ENV
-#&gt; [1] "=S6_BEHAVIOUR_IF_STAGE_2_FAILS"
-#&gt; 
-#&gt; $ENV
-#&gt; [1] "=2"
-#&gt; 
-#&gt; $` `
-#&gt; [1] ""
-#&gt; </div><div class='input'>
-</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>docker_pull</span>(<span class='st'>"rocker/tidyverse"</span>)</div><div class='output co'>#&gt; &lt;Image: 'rocker/tidyverse:latest'&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-      
+            
       <li><a href="#examples">Examples</a></li>
     </ul>
 

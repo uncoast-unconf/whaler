@@ -67,7 +67,7 @@
 <a href="#whaler" class="anchor"></a>whaler</h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of whaler is to …</p>
+<p>whaler is a package for interfacing with Docker from R.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -79,27 +79,48 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># install.packages("devtools")</span></a>
 <a class="sourceLine" id="cb1-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"uncoast-unconf/whaler"</span>)</a></code></pre></div>
 </div>
+<div id="usage" class="section level2">
+<h2 class="hasAnchor">
+<a href="#usage" class="anchor"></a>Usage</h2>
+<p>There are a few basic commands that are analagous to their Docker CLI counterparts:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(whaler)</a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co"># List images</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="kw"><a href="reference/docker_images.html">docker_images</a></span>()</a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co"># Run echo command in the alpine image</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="kw"><a href="reference/docker_run.html">docker_run</a></span>(<span class="st">"alpine:latest"</span>, <span class="st">"echo hello world"</span>)</a>
+<a class="sourceLine" id="cb2-8" title="8"></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co"># Build Dockerfile in directory</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="kw"><a href="reference/docker_build.html">docker_build</a></span>(<span class="st">"path/to/directory"</span>)</a></code></pre></div>
+</div>
 <div id="todo" class="section level2">
 <h2 class="hasAnchor">
 <a href="#todo" class="anchor"></a>Todo</h2>
-<p>In the dockerfile generation, we sill need set_* functions for: - CMD - ADD - COPY - ENTRYPOINT - VOLUME - USER - WORKDIR - ARG - ONBUILD - STOPSIGNAL - HEALTHCHECK - SHELL</p>
-<p>And we have set_* functions for: - ENV - EXPOST - FROM - LABEL - RUN</p>
-<!-- ## Example -->
-<!-- This is a basic example which shows you how to solve a common problem: -->
-<!-- ```{r example} -->
-<!-- library(whaler) -->
-<!-- ## basic example code -->
-<!-- ``` -->
-<!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: -->
-<!-- ```{r cars} -->
-<!-- summary(cars) -->
-<!-- ``` -->
-<!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. -->
-<!-- You can also embed plots, for example: -->
-<!-- ```{r pressure, echo = FALSE} -->
-<!-- plot(pressure) -->
-<!-- ``` -->
-<!-- In that case, don't forget to commit and push the resulting figure files, so they display on GitHub! -->
+<p>In the dockerfile generation, we sill need set_* functions for:</p>
+<ul>
+<li>CMD</li>
+<li>ADD</li>
+<li>COPY</li>
+<li>ENTRYPOINT</li>
+<li>VOLUME</li>
+<li>USER</li>
+<li>WORKDIR</li>
+<li>ARG</li>
+<li>ONBUILD</li>
+<li>STOPSIGNAL</li>
+<li>HEALTHCHECK</li>
+<li>SHELL</li>
+</ul>
+<p>And we have set_* functions for:</p>
+<ul>
+<li>ENV</li>
+<li>EXPOST</li>
+<li>FROM</li>
+<li>LABEL</li>
+<li>RUN</li>
+</ul>
+<!-- ## Example --><!-- This is a basic example which shows you how to solve a common problem: --><!-- ```{r example} --><!-- library(whaler) --><!-- ## basic example code --><!-- ``` --><!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: --><!-- ```{r cars} --><!-- summary(cars) --><!-- ``` --><!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. --><!-- You can also embed plots, for example: --><!-- ```{r pressure, echo = FALSE} --><!-- plot(pressure) --><!-- ``` --><!-- In that case, don't forget to commit and push the resulting figure files, so they display on GitHub! -->
 </div>
 </div>
   </div>

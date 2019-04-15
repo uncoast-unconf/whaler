@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of whaler is to ...
+whaler is a package for interfacing with Docker from R.
 
 ## Installation
 
@@ -34,9 +34,27 @@ And the development version from [GitHub](https://github.com/) with:
 devtools::install_github("uncoast-unconf/whaler")
 ```
 
+## Usage
+
+There are a few basic commands that are analagous to their Docker CLI counterparts:
+
+```r
+library(whaler)
+
+# List images
+docker_images()
+
+# Run echo command in the alpine image
+docker_run("alpine:latest", "echo hello world")
+
+# Build Dockerfile in directory
+docker_build("path/to/directory")
+```
+
 ## Todo
 
 In the dockerfile generation, we sill need set_* functions for:
+
   - CMD
   - ADD
   - COPY
@@ -51,6 +69,7 @@ In the dockerfile generation, we sill need set_* functions for:
   - SHELL
 
 And we have set_* functions for:
+
   - ENV
   - EXPOST
   - FROM
