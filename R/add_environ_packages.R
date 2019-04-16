@@ -25,12 +25,13 @@ add_environ_packages <- function(dockerfile){
     }
 
   }
-  dockerfile
+  dockerfile %>%
+    insert_blank()
 }
 
 create_install_command <- function(package, version){
-  if(is.null(version)){
+  if(is.na(version)){
     version="NULL"
   }
-  paste0('R -e "install.version(\'', package, '\', version=', version, ', dependencies=\'Imports\', upgrade=FALSE)')
+  paste0('R -e "install.version(\'', package, '\', version=', version, ', dependencies=\'Imports\', upgrade=FALSE)\"')
 }

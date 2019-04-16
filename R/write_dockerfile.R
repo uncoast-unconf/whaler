@@ -13,10 +13,15 @@
 #'   insert_blank() %>%
 #'   write_dockerfile()
 #'
-write_dockerfile <- function(dockerfile, file = "Dockerfile"){
+write_dockerfile <- function(dockerfile, file = "Dockerfile", overwrite = FALSE){
 
-  # Connect to the dockerfile
-  file = file
+  if(file.exists(file) & !overwrite){
+    stop("File exists and overwrite = FALSE")
+  }
+
+  if(file.exists(file) & overwrite){
+    file.remove(file)
+  }
 
   # Loop through dockerfile items
   for(ii in 1:length(dockerfile)){
