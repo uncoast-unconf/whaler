@@ -20,15 +20,10 @@ addin_run_container <- function() {
 
   server <- function(input, output, session) {
     shiny::observeEvent(input$run, {
-      if (is.null(input$name)) {
-        name <- generate_name()
-      } else {
-        name <- input$name
-      }
       rx <- callr::r_bg(func = function(image, name) {
         docker <- stevedore::docker_client()
         docker$container$run(image = image, name = name)
-      }, args = list(image = input$image, name = name))
+      }, args = list(image = input$image, name = generate_name()))
       rx
       invisible(shiny::stopApp())
     })
