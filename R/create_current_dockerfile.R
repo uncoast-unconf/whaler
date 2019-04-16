@@ -14,6 +14,7 @@ create_current_dockerfile <- function(file = "Dockerfile"){
   dockerfile() %>%
     set_from(paste("rocker/r-ver:", ver)) %>%
     add_environ_packages() %>%
+    set_cmd("[\"R\"]") %>%
     write_dockerfile(file = file, overwrite = TRUE)
 
 }

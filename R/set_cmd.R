@@ -9,8 +9,7 @@
 #' @examples
 #'
 set_cmd <- function(dockerfile, command, blank = TRUE){
-  ret <- dockerfile %>%
-    list('CMD' = command)
+  ret <- c(dockerfile, list('CMD' = command))
 
   if(blank) ret <- ret %>% insert_blank()
 
