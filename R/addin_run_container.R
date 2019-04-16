@@ -9,7 +9,7 @@ addin_run_container <- function() {
         shiny::textInput(
         inputId = "image",
         label = "Image name",
-        placeholder = "trestletech/plumber:latest"
+        value = "trestletech/plumber:latest"
       ),
       shiny::textInput(
         inputId = "name",
@@ -32,8 +32,9 @@ addin_run_container <- function() {
       rx
       rstudioapi::jobAdd(
         name = input$image,
-        status = "Running",
-        autoRemove = FALSE
+        status = "running",
+        autoRemove = FALSE,
+        running = TRUE
       )
       invisible(shiny::stopApp())
     })
