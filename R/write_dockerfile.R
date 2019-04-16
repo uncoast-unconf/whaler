@@ -13,10 +13,10 @@
 #'   insert_blank() %>%
 #'   write_dockerfile()
 #'
-write_dockerfile <- function(dockerfile){
+write_dockerfile <- function(dockerfile, file = "Dockerfile"){
 
   # Connect to the dockerfile
-  file_name = "Dockerfile"
+  file_name = file
 
   # Loop through dockerfile items
   for(ii in 1:length(dockerfile)){
@@ -38,6 +38,6 @@ write_dockerfile <- function(dockerfile){
   }
 
   # Return the dockerfile, unedited
-  return(dockerfile)
+  return(file_name)
 
 }
