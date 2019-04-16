@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
 # whaler
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.org/uncoast-unconf/whaler.svg?branch=master)](https://travis-ci.org/uncoast-unconf/whaler)
 <!-- badges: end -->
 
 whaler is a package for interfacing with Docker from R.
