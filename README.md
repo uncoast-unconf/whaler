@@ -7,8 +7,8 @@
 
 <!-- badges: end -->
 
-The goal of whaler is to
-…
+whaler is a package for interfacing with Docker from
+R.
 
 ## Installation
 
@@ -27,14 +27,49 @@ And the development version from [GitHub](https://github.com/) with:
 devtools::install_github("uncoast-unconf/whaler")
 ```
 
+## Usage
+
+There are a few basic commands that are analagous to their Docker CLI
+counterparts:
+
+``` r
+library(whaler)
+
+# List images
+docker_images()
+
+# Run echo command in the alpine image
+docker_run("alpine:latest", "echo hello world")
+
+# Build Dockerfile in directory
+docker_build("path/to/directory")
+```
+
 ## Todo
 
-In the dockerfile generation, we sill need set\_\* functions for: - CMD
-- ADD - COPY - ENTRYPOINT - VOLUME - USER - WORKDIR - ARG - ONBUILD -
-STOPSIGNAL - HEALTHCHECK - SHELL
+In the dockerfile generation, we sill need set\_\* functions for:
 
-And we have set\_\* functions for: - ENV - EXPOST - FROM - LABEL -
-RUN
+  - CMD
+  - ADD
+  - COPY
+  - ENTRYPOINT
+  - VOLUME
+  - USER
+  - WORKDIR
+  - ARG
+  - ONBUILD
+  - STOPSIGNAL
+  - HEALTHCHECK
+  - SHELL
+
+And we have set\_\* functions
+for:
+
+  - ENV
+  - EXPOST
+  - FROM
+  - LABEL
+  - RUN
 
 <!-- ## Example -->
 
