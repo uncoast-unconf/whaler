@@ -4,7 +4,8 @@
 #'
 #' @return
 #' @export `String` outputs dockerfile location and anme
-#' #'
+#'
+#'
 #' @examples
 #' create_current_dockerfile()
 create_current_dockerfile <- function(file = "Dockerfile"){
