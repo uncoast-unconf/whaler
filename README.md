@@ -41,11 +41,23 @@ docker_images()
 # Run echo command in the alpine image
 docker_run("alpine:latest", "echo hello world")
 
-# Build Dockerfile in directory
-docker_build("path/to/directory")
+# Generate Empty Dockerfile
+dockerfile() 
+
+# Generate empty Dockerfile and populate
+ mydockerfile <- dockerfile() %>%
+  set_from("debian:stretch") %>%
+  set_run() %>%
+  set_label() %>%
+  set_env() %>%
+  set_expost() 
+
+# Write Dockerfile 
+write_dockerfile(mydocker)
 ```
 
 ## Todo
+
 
 In the dockerfile generation, we sill need set\_\* functions for:
 
