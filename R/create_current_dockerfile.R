@@ -2,9 +2,8 @@
 #'
 #' @param `String` output dockerfile location and name, defaults to "Dockerfile"
 #'
-#' @return
 #' @export `String` outputs dockerfile location and anme
-#' #'
+#'
 #' @examples
 #' create_current_dockerfile()
 create_current_dockerfile <- function(file = "Dockerfile"){
