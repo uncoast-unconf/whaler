@@ -47,24 +47,19 @@ docker_images()
 # Run echo command in the alpine image
 docker_run("alpine:latest", "echo hello world")
 
-#Generate empty dockerfile
-mydockerfile <- dockerfile()
+# Generate Empty Dockerfile
+dockerfile() 
 
-#Generate and populate dockerfile
-mydockerfile <- dockerfile() %>%
-  set_from(., "debian:stretch") %>%
-  set_label(., c("label_1"="value_1", "label_2"="value_2")) %>%
-  set_env(., c("S6_VERSION" = "${S6_VERSION:-v1.21.7.0}",
-             "S6_BEHAVIOUR_IF_STAGE_2_FAILS", "2")) %>%
-  set_expose(., 8080) %>%
-  set_run(., "-R install.packages('ggplot2')") 
-  
-#Write dockerfile
-mydockerfile %>% write_dockerfile() 
+# Generate empty Dockerfile and populate
+ mydockerfile <- dockerfile() %>%
+  set_from("debian:stretch") %>%
+  set_run() %>%
+  set_label() %>%
+  set_env() %>%
+  set_expost() 
 
-
-# Build Dockerfile in directory
-docker_build("path/to/directory")
+# Write Dockerfile 
+write_dockerfile(mydocker)
 ```
 
 ## Todo
