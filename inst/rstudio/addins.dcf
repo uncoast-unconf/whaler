@@ -1,0 +1,4 @@
+Name: List Docker images
+Description: List Docker images
+Binding: docker_list_addin
+Interactive: false
