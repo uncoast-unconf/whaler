@@ -5,11 +5,12 @@ addin_run_container <- function() {
       shiny::textInput(
         inputId = "image",
         label = "Image name",
-        value = "trestletech/plumber:latest"
+        placeholder = "trestletech/plumber:latest"
       ),
       shiny::textInput(
         inputId = "name",
-        label = "Container name"
+        label = "Container name",
+        placeholder = "e.g. intelligent_luke_tierney"
       ),
       shiny::actionButton(
         inputId = "run",
@@ -17,10 +18,6 @@ addin_run_container <- function() {
       )
     )
   )
-
-  on_stop <- function(id) {
-    docker$container$remove(id)
-  }
 
   server <- function(input, output, session) {
     shiny::observeEvent(input$run, {
