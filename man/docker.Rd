@@ -4,7 +4,7 @@
 \name{docker}
 \alias{docker}
 \title{Docker module object}
-\format{An object of class \code{python.builtin.module} (inherits from \code{python.builtin.object}) of length 2.}
+\format{An object of class \code{docker_client} (inherits from \code{stevedore_object}) of length 25.}
 \usage{
 docker
 }
