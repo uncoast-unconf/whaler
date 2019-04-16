@@ -17,4 +17,6 @@ set_from <- function(dockerfile, image) {
   dockerfile <- c(dockerfile, FROM) %>%
     insert_blank()
 
+  dockerfile
+
 }
