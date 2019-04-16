@@ -1,8 +1,12 @@
 addin_run_container <- function() {
 
   ui <- miniUI::miniPage(
+    style = "background: #F8FDFF",
+    miniUI::gadgetTitleBar("Run Container",
+                           left = NULL,
+                           right = miniUI::miniTitleBarButton("done", "Done", primary = FALSE)),
     miniUI::miniContentPanel(
-      shiny::textInput(
+        shiny::textInput(
         inputId = "image",
         label = "Image name",
         placeholder = "trestletech/plumber:latest"
@@ -39,12 +43,7 @@ addin_run_container <- function() {
     })
   }
 
-  viewer <- shiny::dialogViewer(
-    dialogName = "Subset",
-    width = 400,
-    height = 300
-  )
-  shiny::runGadget(ui, server, viewer = viewer)
+  shiny::runGadget(ui, server)
 }
 
 generate_name <- function() {

@@ -9,7 +9,11 @@ Authors@R:
     person(given = "Sam",
            family = "Helmich",
            role = c("aut"),
-           email = "sam.helmich@gmail.com"))
+           email = "sam.helmich@gmail.com"),
+    person(given = "Ben",
+           family = "Crary",
+           role = c("aut"),
+           email = "benjamin.crary@gmail.com")))
 Description: A package for interfacing with Docker from R, including generating dockerfiles and allowing users to build/push/tag/run docker images.
 License: MIT + file LICENSE
 Depends: magrittr, tibble, callr, dplyr, rstudioapi, shiny

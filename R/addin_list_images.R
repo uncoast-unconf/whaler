@@ -1,7 +1,9 @@
 addin_list_images <- function() {
 
   ui <- miniUI::miniPage(
-    miniUI::gadgetTitleBar(title = "Docker Images", left = NULL),
+    style = "background: #F8FDFF",
+    miniUI::gadgetTitleBar(title = "Docker Images", left = NULL,
+                           right = miniUI::miniTitleBarButton("done", "Done", primary = FALSE)),
     miniUI::miniContentPanel(
       shiny::dataTableOutput("images_df")
     )
