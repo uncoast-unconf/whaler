@@ -3,6 +3,7 @@
 #' @return `tibble` of packages and their required version
 #' @export
 #'
+#' @import tibble
 #' @examples
 #' get_current_package_dependencies()
 get_current_package_dependencies <- function(){

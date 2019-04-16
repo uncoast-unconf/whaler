@@ -16,8 +16,10 @@ an object of class \code{dockerfile}
 Write a dockerfile from a dockerfile object
 }
 \examples{
+\dontrun{
 dockerfile() \%>\%
   insert_blank() \%>\%
   write_dockerfile()
+  }
 
 }

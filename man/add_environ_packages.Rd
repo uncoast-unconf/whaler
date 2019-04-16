@@ -17,6 +17,6 @@ Add packages from current environment to dockerfile
 }
 \examples{
 dockerfile() \%>\%
-  get_current_package_dependencies()
+  add_environ_packages()
 
 }

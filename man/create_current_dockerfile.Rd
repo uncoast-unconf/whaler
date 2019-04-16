@@ -16,5 +16,7 @@ create_current_dockerfile(file = "Dockerfile")
 Creates a dockerfile that mirrors the current environment
 }
 \examples{
+\dontrun{
 create_current_dockerfile()
+}
 }

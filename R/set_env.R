@@ -9,8 +9,7 @@
 #' @examples
 #' dockerfile() %>%
 #'   set_env(c("S6_VERSION" = "${S6_VERSION:-v1.21.7.0}",
-#'             "S6_BEHAVIOUR_IF_STAGE_2_FAILS", "2")) %>%
-#'   write_dockerfile()
+#'             "S6_BEHAVIOUR_IF_STAGE_2_FAILS", "2"))
 #'
 set_env <- function(dockerfile, env_vars){
   # Creates the new list to be appended

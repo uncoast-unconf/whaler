@@ -7,7 +7,7 @@
 #'
 #' @examples
 #' dockerfile() %>%
-#'   get_current_package_dependencies()
+#'   add_environ_packages()
 #'
 add_environ_packages <- function(dockerfile){
   # Get package dependencies

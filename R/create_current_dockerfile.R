@@ -7,7 +7,9 @@
 #'
 #'
 #' @examples
+#' \dontrun{
 #' create_current_dockerfile()
+#' }
 create_current_dockerfile <- function(file = "Dockerfile"){
   # Gets the current R version
   ver <- strsplit(R.version.string, split=" ")[[1]][3]

@@ -9,9 +9,11 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dockerfile() %>%
 #'   insert_blank() %>%
 #'   write_dockerfile()
+#'   }
 #'
 write_dockerfile <- function(dockerfile, file = "Dockerfile", overwrite = FALSE){
 

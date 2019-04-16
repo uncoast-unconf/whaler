@@ -12,7 +12,7 @@ Authors@R:
            email = "sam.helmich@gmail.com"))
 Description: A package for interfacing with Docker from R, including generating dockerfiles and allowing users to build/push/tag/run docker images.
 License: MIT + file LICENSE
-Depends: magrittr
+Depends: magrittr, tibble, callr, dplyr, rstudioapi, shiny
 Encoding: UTF-8
 LazyData: true
 Imports: 
