@@ -41,12 +41,6 @@ There are a few basic commands that are analagous to their Docker CLI counterpar
 ```r
 library(whaler)
 
-# List images
-docker_images()
-
-# Run echo command in the alpine image
-docker_run("alpine:latest", "echo hello world")
-
 # Generate Empty Dockerfile
 dockerfile() 
 

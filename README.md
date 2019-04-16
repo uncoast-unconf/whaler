@@ -35,12 +35,6 @@ counterparts:
 ``` r
 library(whaler)
 
-# List images
-docker_images()
-
-# Run echo command in the alpine image
-docker_run("alpine:latest", "echo hello world")
-
 # Generate Empty Dockerfile
 dockerfile() 
 
@@ -57,7 +51,6 @@ write_dockerfile(mydocker)
 ```
 
 ## Todo
-
 
 In the dockerfile generation, we sill need set\_\* functions for:
 

@@ -4,7 +4,7 @@
 \alias{set_cmd}
 \title{Set a command to executed when running the image}
 \usage{
-set_cmd(dockerfile, command)
+set_cmd(dockerfile, command, blank = TRUE)
 }
 \arguments{
 \item{dockerfile}{a dockerfile object}

@@ -1,0 +1,9 @@
+Name: List Images
+Description: Lists Docker images
+Binding: addin_list_images
+Interactive: false
+
+Name: Run Container
+Description: Runs a Docker container
+Binding: addin_run_container
+Interactive: true
