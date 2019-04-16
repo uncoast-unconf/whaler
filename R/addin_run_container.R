@@ -14,7 +14,8 @@ addin_run_container <- function() {
       shiny::textInput(
         inputId = "name",
         label = "Container name",
-        placeholder = "e.g. intelligent_luke_tierney"
+        value = generate_name()
+        # placeholder = "e.g. intelligent_luke_tierney"
       ),
       shiny::actionButton(
         inputId = "run",
@@ -27,11 +28,11 @@ addin_run_container <- function() {
     shiny::observeEvent(input$run, {
       rx <- callr::r_bg(func = function(image, name) {
         docker <- stevedore::docker_client()
-        docker$container$run(image = image, name = name)
-      }, args = list(image = input$image, name = generate_name()))
+        docker$container$run(image = image, name = name, rm = TRUE)
+      }, args = list(image = input$image, name = input$name))
       rx
       rstudioapi::jobAdd(
-        name = input$image,
+        name = input$name,
         status = "running",
         autoRemove = FALSE,
         running = TRUE

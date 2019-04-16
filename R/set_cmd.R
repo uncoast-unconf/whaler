@@ -6,8 +6,6 @@
 #' @return a dockerfile object
 #' @export
 #'
-#' @examples
-#'
 set_cmd <- function(dockerfile, command, blank = TRUE){
   ret <- c(dockerfile, list('CMD' = command))
 

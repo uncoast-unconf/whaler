@@ -17,6 +17,3 @@ a dockerfile object
 \description{
 Set a command to executed when running the image
 }
-\examples{
-
-}
