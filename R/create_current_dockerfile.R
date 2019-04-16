@@ -2,7 +2,8 @@
 #'
 #' @param `String` output dockerfile location and name, defaults to "Dockerfile"
 #'
-#' @export `String` outputs dockerfile location and anme
+#' @export
+#' @return `String` output dockerfile location and name
 #'
 #'
 #' @examples
