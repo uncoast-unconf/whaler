@@ -4,6 +4,7 @@
 #' @export
 #'
 #' @examples
+#' get_current_package_dependencies()
 get_current_package_dependencies <- function(){
 
   # Get base and other attached packages
