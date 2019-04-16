@@ -2,11 +2,6 @@
 
 export(check_for_from)
 export(docker)
-export(docker_build)
-export(docker_images)
-export(docker_pull)
-export(docker_run)
-export(docker_tag)
 export(dockerfile)
 export(insert_blank)
 export(install_docker)

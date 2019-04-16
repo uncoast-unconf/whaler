@@ -18,6 +18,10 @@ addin_run_container <- function() {
     )
   )
 
+  on_stop <- function(id) {
+    docker$container$remove(id)
+  }
+
   server <- function(input, output, session) {
     shiny::observeEvent(input$run, {
       rx <- callr::r_bg(func = function(image, name) {
@@ -25,6 +29,11 @@ addin_run_container <- function() {
         docker$container$run(image = image, name = name)
       }, args = list(image = input$image, name = generate_name()))
       rx
+      rstudioapi::jobAdd(
+        name = input$image,
+        status = "Running",
+        autoRemove = FALSE
+      )
       invisible(shiny::stopApp())
     })
 
