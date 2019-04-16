@@ -41,14 +41,19 @@ There are a few basic commands that are analagous to their Docker CLI counterpar
 ```r
 library(whaler)
 
-# List images
-docker_images()
+# Generate Empty Dockerfile
+dockerfile() 
 
-# Run echo command in the alpine image
-docker_run("alpine:latest", "echo hello world")
+# Generate empty Dockerfile and populate
+ mydockerfile <- dockerfile() %>%
+  set_from("debian:stretch") %>%
+  set_run() %>%
+  set_label() %>%
+  set_env() %>%
+  set_expost() 
 
-# Build Dockerfile in directory
-docker_build("path/to/directory")
+# Write Dockerfile 
+write_dockerfile(mydocker)
 ```
 
 ## Todo

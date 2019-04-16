@@ -4,7 +4,7 @@
 \alias{write_dockerfile}
 \title{Write a dockerfile from a dockerfile object}
 \usage{
-write_dockerfile(dockerfile)
+write_dockerfile(dockerfile, file = "Dockerfile", overwrite = FALSE)
 }
 \arguments{
 \item{dockerfile, }{an object of class \code{dockerfile}}

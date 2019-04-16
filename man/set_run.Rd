@@ -4,12 +4,14 @@
 \alias{set_run}
 \title{Set a command to run in the image}
 \usage{
-set_run(dockerfile, command)
+set_run(dockerfile, command, blank = TRUE)
 }
 \arguments{
 \item{dockerfile}{a specification of the contents of the dockerfile}
 
 \item{command}{a command to run in the shell}
+
+\item{blank}{boolean indicating whether or not to add a trailing space}
 }
 \value{
 \code{dockerfile}
