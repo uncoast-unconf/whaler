@@ -16,7 +16,7 @@
 write_dockerfile <- function(dockerfile, file = "Dockerfile"){
 
   # Connect to the dockerfile
-  file_name = file
+  file = file
 
   # Loop through dockerfile items
   for(ii in 1:length(dockerfile)){
@@ -27,17 +27,17 @@ write_dockerfile <- function(dockerfile, file = "Dockerfile"){
       # The first line always includes the action word
       if(jj == 1){
         write(x = paste(names(dockerfile)[ii], dockerfile[[ii]][jj]),
-              file = file_name,
+              file = file,
               append = TRUE)
       }else{
         write(x = paste(dockerfile[[ii]][jj]),
-              file = file_name,
+              file = file,
               append = TRUE)
       }
     }
   }
 
   # Return the dockerfile, unedited
-  return(file_name)
+  return(file)
 
 }
