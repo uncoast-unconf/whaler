@@ -1,6 +1,6 @@
 #' Creates a dockerfile that mirrors the current environment
 #'
-#' @param `String` output dockerfile location and name, defaults to "Dockerfile"
+#' @param file `String` output dockerfile location and name, defaults to "Dockerfile"
 #'
 #' @export
 #' @return `String` output dockerfile location and name

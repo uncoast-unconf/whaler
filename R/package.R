@@ -1,3 +1,5 @@
+utils::globalVariables(c(".", "package", "age"))
+
 #' Docker module object
 #'
 #' Uses the reticulate framework to access the Docker SDK.

@@ -9,7 +9,7 @@
 get_current_package_dependencies <- function(){
 
   # Get base and other attached packages
-  other_pkgs <- sessionInfo()$otherPkgs
+  other_pkgs <- utils::sessionInfo()$otherPkgs
   other_pkgs_versions <- unlist(lapply(other_pkgs, function(x) x$Version))
   tibble::tibble(package = names(other_pkgs), version = other_pkgs_versions)
 
@@ -19,13 +19,13 @@ get_current_package_dependencies <- function(){
                               return(extract_depends(x$Imports))
                             }
                           }) %>%
-    bind_rows() %>%
-    group_by(package) %>%
-    arrange(desc(version)) %>%
-    mutate(age = 1:n()) %>%
-    ungroup() %>%
-    filter(age == 1) %>%
-    select(-age)
+    dplyr::bind_rows() %>%
+    dplyr::group_by(package) %>%
+    dplyr::arrange(dplyr::desc(version)) %>%
+    dplyr::mutate(age = 1:dplyr::n()) %>%
+    dplyr::ungroup() %>%
+    dplyr::filter(age == 1) %>%
+    dplyr::select(-age)
 }
 
 extract_depends <- function(imports_string){
@@ -47,6 +47,3 @@ extract_depends <- function(imports_string){
     dplyr::bind_rows()
   return(depends_versions)
 }
-
-
-

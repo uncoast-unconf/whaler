@@ -10,6 +10,8 @@ set_cmd(dockerfile, command, blank = TRUE)
 \item{dockerfile}{a dockerfile object}
 
 \item{command}{a command to be passed to the dockerfile}
+
+\item{blank}{whether to include a blank line at the end of file}
 }
 \value{
 a dockerfile object

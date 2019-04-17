@@ -7,7 +7,7 @@
 create_current_dockerfile(file = "Dockerfile")
 }
 \arguments{
-\item{`String`}{output dockerfile location and name, defaults to "Dockerfile"}
+\item{file}{\code{String} output dockerfile location and name, defaults to "Dockerfile"}
 }
 \value{
 \code{String} output dockerfile location and name

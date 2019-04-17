@@ -1,6 +1,8 @@
 #' Write a dockerfile from a dockerfile object
 #'
 #' @param dockerfile, an object of class `dockerfile`
+#' @param file, the filename
+#' @param overwrite, whether to overwrite an existing Dockerfile
 #'
 #' @return an object of class `dockerfile`
 #'
