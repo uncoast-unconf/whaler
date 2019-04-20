@@ -8,6 +8,10 @@ write_dockerfile(dockerfile, file = "Dockerfile", overwrite = FALSE)
 }
 \arguments{
 \item{dockerfile, }{an object of class \code{dockerfile}}
+
+\item{file, }{the filename}
+
+\item{overwrite, }{whether to overwrite an existing Dockerfile}
 }
 \value{
 an object of class \code{dockerfile}
@@ -16,8 +20,10 @@ an object of class \code{dockerfile}
 Write a dockerfile from a dockerfile object
 }
 \examples{
+\dontrun{
 dockerfile() \%>\%
   insert_blank() \%>\%
   write_dockerfile()
+  }
 
 }

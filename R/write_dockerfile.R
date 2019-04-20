@@ -1,6 +1,8 @@
 #' Write a dockerfile from a dockerfile object
 #'
 #' @param dockerfile, an object of class `dockerfile`
+#' @param file, the filename
+#' @param overwrite, whether to overwrite an existing Dockerfile
 #'
 #' @return an object of class `dockerfile`
 #'
@@ -9,9 +11,11 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dockerfile() %>%
 #'   insert_blank() %>%
 #'   write_dockerfile()
+#'   }
 #'
 write_dockerfile <- function(dockerfile, file = "Dockerfile", overwrite = FALSE){
 
