@@ -24,7 +24,7 @@ devtools::install_github("uncoast-unconf/whaler")
 Usage
 -----
 
-There are a few basic commands that are analagous to their Docker CLI counterparts:
+There are a few basic commands that are analogous to their Docker CLI counterparts:
 
 ``` r
 library(whaler)
